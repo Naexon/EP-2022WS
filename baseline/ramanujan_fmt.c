@@ -7,6 +7,7 @@
 */
 
 // IDEAS: use desity distribution for hashing
+// hashing is always value of node -> bad occupancy of hashtable
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -65,7 +66,7 @@ int main(int argc, char **argv)
   n = strtol(argv[1], &endptr, 10);
   if (*endptr != '\0')
     goto usage;
-    
+
   table_size = size_table(n);
   table = calloc(table_size, sizeof(struct node *));
 
