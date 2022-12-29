@@ -1,9 +1,11 @@
-#Memory in KB
-MEMORY = 102400
+MEMORY = 102400 # Memory in KB
 N = 10000000000000
 RAMA = ramasort
 CC = gcc
 CFLAGS = -O -Wall
+DFLAGS = -Og -Wall # Include debug symbols
+
+# Switch correct flags or do not copy back this makefile !!!!!!!!!!!!!!!!
 
 SOURCES = ramasort.c ramanujan.c Makefile
 
@@ -17,10 +19,10 @@ clean:
 	rm ramasort ramanujan
 
 ramanujan: ramanujan.c
-	$(CC) $(CFLAGS) ramanujan.c -lm -o ramanujan
+	$(CC) $(DFLAGS) ramanujan.c -lm -o ramanujan
 
 ramasort: ramasort.c
-	$(CC) $(CFLAGS) ramasort.c -lm -o ramasort
+	$(CC) $(DFLAGS) ramasort.c -lm -o ramasort
 
 dist: ../ramanujan.tar.gz
 
