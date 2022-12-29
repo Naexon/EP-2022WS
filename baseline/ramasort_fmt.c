@@ -50,7 +50,7 @@ size_t size_table(long n)
 // main function
 int main(int argc, char **argv)
 {
-  long n; // n value
+  long n;       // n value
   char *endptr; // for argument parsing and error output
 
   long i, j; // loop counters
