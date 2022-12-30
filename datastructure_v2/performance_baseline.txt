@@ -1,0 +1,19 @@
+ulimit -S -v 102400; perf stat -e cycles -e instructions -e branch-misses -e LLC-load-misses -e LLC-store-misses ./ramasort 1000000000000
+hSize 10000
+2251 Ramanujan numbers up to 1000000000000, checksum=1583802601513
+occupation=0, size=0
+Memory usage: >=160000
+cc 44166809
+
+ Performance counter stats for './ramasort 1000000000000':
+
+       10929604818      cycles                                                      
+       18737305273      instructions              #    1.71  insn per cycle         
+         239473891      branch-misses                                               
+             10177      LLC-load-misses                                             
+              3583      LLC-store-misses                                            
+
+       2.333988029 seconds time elapsed
+
+       2.333734000 seconds user
+       0.000000000 seconds sys
