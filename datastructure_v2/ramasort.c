@@ -169,6 +169,43 @@ struct entry DeleteMin()
   return minElement;
 }
 
+struct entry ReplaceMin(struct entry newEntry)
+{
+  /* heap[1] is the minimum element. So we remove heap[1]. Size of the heap is decreased.
+   Now heap[1] has to be filled. We put the last element in its place and see if it fits.
+   If it does not fit, take minimum element among both its children and replaces parent with it.
+   Again See if the last element fits in that place.*/
+  struct entry minElement, lastElement;
+  int now, child;
+  minElement = heap[1];
+  lastElement = newEntry;
+  /* now refers to the index at which we are now */
+  for (now = 1; now * 2 <= heapSize; now = child)
+  {
+    /* child is the index of the element which is minimum among both the children */
+    /* Indexes of children are i*2 and i*2 + 1*/
+    child = now * 2;
+    /*child!=heapSize beacuse heap[heapSize+1] does not exist, which means it has only one
+     child */
+    if (child != heapSize && heap[child + 1].value < heap[child].value)
+    {
+      child++;
+    }
+    /* To check if the last element fits ot not it suffices to check if the last element
+     is less than the minimum element among both the children*/
+    if (lastElement.value > heap[child].value)
+    {
+      heap[now] = heap[child];
+    }
+    else /* It fits there */
+    {
+      break;
+    }
+  }
+  heap[now] = lastElement;
+  return minElement;
+}
+
 void printHeap()
 {
 
@@ -220,7 +257,7 @@ int main(int argc, char **argv)
       checksum += heap[1].value;
     }
 
-    struct entry min = DeleteMin();
+    struct entry min = heap[1]; //DeleteMin();
     // printf("k%ld, l%ld, value %ld\n",min.k, min.l, min.value);
 
     // Insert new node if i < j
@@ -228,7 +265,9 @@ int main(int argc, char **argv)
     if (min.k < min.l && cube(min.k) + cube(min.l) <= n)
     {
       min.value = cube(min.k) + cube(min.l);
-      Insert(min);
+      ReplaceMin(min);
+    }else{
+      DeleteMin();
     }
   }
 

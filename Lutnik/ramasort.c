@@ -60,7 +60,8 @@ int main(int argc, char **argv)
 
   for (i=0; cube(i)<=n; i++) {
     for (j=i+1; cube(i)+cube(j)<=n; j++) {
-      table[m++] = (struct entry){i,j,cube(i)+cube(j)};
+      table[m] = (struct entry){i,j,cube(i)+cube(j)};
+      m++;
     }
   }
   assert(m<=table_size);
@@ -69,8 +70,9 @@ int main(int argc, char **argv)
     if (table[i-1].value==table[i].value) {
       count++;
       checksum += table[i].value;
-      while (i<m-1 && table[i].value==table[i+1].value)
+      while (i<m-1 && table[i].value==table[i+1].value) {
         i++;
+      }
     }
   }
   printf("%ld Ramanujan numbers up to %ld, checksum=%ld\noccupation=%ld, size=%ld\n",count,n,checksum,m,table_size);

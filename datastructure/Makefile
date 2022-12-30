@@ -1,6 +1,6 @@
 #Memory in KB
 MEMORY = 102400
-N = 10000000000000
+N = 1000000000000#0
 RAMA = ramasort
 CC = gcc
 CFLAGS = -O -Wall

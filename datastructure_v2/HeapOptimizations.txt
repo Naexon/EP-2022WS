@@ -60,3 +60,30 @@ heap baseline:
 
        2.090901000 seconds user
        0.000000000 seconds sys
+
+6. optmize Delete:
+    do not delete elements, but set their value to -1, thus making the values invalid and making the ifs to check the heapSize in CheckForOneSameSum redundant
+    no improvements, virtually same performance
+        9129054551      cycles                                                      
+       15465864032      instructions              #    1.69  insn per cycle         
+         223883951      branch-misses                                               
+              8409      LLC-load-misses                                             
+              3944      LLC-store-misses                                            
+
+       1.962787410 seconds time elapsed
+
+       1.962882000 seconds user
+       0.000000000 seconds sys
+
+7. optmize Delete v2:
+    do not delete elements and then reinsert the new ones, but replace the min with the new element
+            8803813259      cycles                                                      
+       13192000471      instructions              #    1.50  insn per cycle         
+         223482867      branch-misses                                               
+              9059      LLC-load-misses                                             
+              3869      LLC-store-misses                                            
+
+       1.894253059 seconds time elapsed
+
+       1.894283000 seconds user
+       0.000000000 seconds sys
