@@ -84,27 +84,42 @@ int CheckForOneSameSum(int i)
   if (4 < heapSize)
   {
     if (heap[4].value == val)
-      c++;
+      if (c == 1)
+        return 0;
+      else
+        c++;
   }
   if (5 < heapSize)
   {
     if (heap[5].value == val)
-      c++;
+      if (c == 1)
+        return 0;
+      else
+        c++;
   }
   if (3 < heapSize)
   {
     if (heap[3].value == val)
-      c++;
+      if (c == 1)
+        return 0;
+      else
+        c++;
   }
   if (6 < heapSize)
   {
     if (heap[6].value == val)
-      c++;
+      if (c == 1)
+        return 0;
+      else
+        c++;
   }
   if (7 < heapSize)
   {
     if (heap[7].value == val)
-      c++;
+      if (c == 1)
+        return 0;
+      else
+        c++;
   }
 
   if (c == 1)
@@ -192,16 +207,16 @@ int main(int argc, char **argv)
   }
   printf("hSize %ld\n", maxNumbers);
 
-int cc = 0;
+  int cc = 0;
   while (heapSize > 0)
   {
-cc++;
-    //printf("size %ld\n", heapSize);
-    //printHeap();
+    cc++;
+    // printf("size %ld\n", heapSize);
+    // printHeap();
     if (CheckForOneSameSum(1))
     {
       count++;
-      //printf("found:       k %ld, l %ld, value %ld, size %ld\n", heap[1].k, heap[1].l, heap[1].value, heapSize);
+      // printf("found:       k %ld, l %ld, value %ld, size %ld\n", heap[1].k, heap[1].l, heap[1].value, heapSize);
       checksum += heap[1].value;
     }
 

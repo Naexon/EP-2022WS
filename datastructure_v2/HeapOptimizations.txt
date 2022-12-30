@@ -1,0 +1,62 @@
+heap baseline: 
+10929604818      cycles                                                      
+       18737305273      instructions              #    1.71  insn per cycle         
+         239473891      branch-misses                                               
+             10177      LLC-load-misses                                             
+              3583      LLC-store-misses                                            
+
+       2.333988029 seconds time elapsed
+
+1. optimize insert:
+    cache calculation of now / 2, and replace division by bitshift
+       10522874433      cycles                                                      
+       18541095920      instructions              #    1.76  insn per cycle         
+         229856076      branch-misses                                               
+              8823      LLC-load-misses                                             
+              3886      LLC-store-misses                                            
+
+       2.247161359 seconds time elapsed
+
+2. Add -O3 compiler flag:
+    no improvements
+
+3. optmize CheckForOneSameSum:
+    check in every if statement if c would become > 1, and return 0 if this is the case
+        9171493057      cycles                                                      
+       15907583011      instructions              #    1.73  insn per cycle         
+         225752748      branch-misses                                               
+              8095      LLC-load-misses                                             
+              4168      LLC-store-misses                                            
+
+       1.958937528 seconds time elapsed
+
+       1.959031000 seconds user
+       0.000000000 seconds sys
+
+4. optmize CheckForOneSameSum v2:
+    nest ifs, so that ifs that require larger heapsizes are only executed if the ones that require smaller ones are executed, too
+    worse performance
+            9837408651      cycles                                                      
+       15819394841      instructions              #    1.61  insn per cycle         
+         244844596      branch-misses                                               
+              8855      LLC-load-misses                                             
+              3874      LLC-store-misses                                            
+
+       2.113771459 seconds time elapsed
+
+       2.113795000 seconds user
+       0.000000000 seconds sys
+
+5. optmize CheckForOneSameSum v3:
+    add an if checking if the heapSize is larger 7, if so, do not check the heapSize for each individual if
+    worse performance
+        9744281570      cycles                                                      
+       15819332382      instructions              #    1.62  insn per cycle         
+         241721175      branch-misses                                               
+             11041      LLC-load-misses                                             
+              3994      LLC-store-misses                                            
+
+       2.091135785 seconds time elapsed
+
+       2.090901000 seconds user
+       0.000000000 seconds sys
