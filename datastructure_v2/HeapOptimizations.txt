@@ -77,7 +77,7 @@ heap baseline:
 
 7. optmize Delete v2:
     do not delete elements and then reinsert the new ones, but replace the min with the new element
-            8803813259      cycles                                                      
+        8803813259      cycles                                                      
        13192000471      instructions              #    1.50  insn per cycle         
          223482867      branch-misses                                               
               9059      LLC-load-misses                                             
@@ -86,4 +86,45 @@ heap baseline:
        1.894253059 seconds time elapsed
 
        1.894283000 seconds user
+       0.000000000 seconds sys
+
+8. optmize cube calculation:
+    cache the result of the cube calculation outside of the if statement, so that it does not have to be recalculated in the then body
+        1154719727      cycles                                                      
+        5417255889      instructions              #    4.69  insn per cycle         
+           2457639      branch-misses                                               
+              1638      LLC-load-misses                                             
+              3613      LLC-store-misses                                            
+
+       0.250803809 seconds time elapsed
+
+       0.250838000 seconds user
+       0.000000000 seconds sys
+
+9. optmize cube calculation v2:
+    cache all cubes that will have to be calculated in an array, and access the array isntead of calculating the cubes
+    worse performance
+        8664731697      cycles                                                      
+       13059872445      instructions              #    1.51  insn per cycle         
+         217775095      branch-misses                                               
+             13396      LLC-load-misses                                             
+              4946      LLC-store-misses                                            
+
+       1.850922561 seconds time elapsed
+
+       1.850977000 seconds user
+       0.000000000 seconds sys
+
+10. optmize cube calculation v3:
+    store the cube of the l variable of the entry struct in the struct, because this value is not changed during the program execution (as opposed to the k variable)
+    worse performance
+        2995709623      cycles                                                      
+        7276641199      instructions              #    2.43  insn per cycle         
+          21128839      branch-misses                                               
+              3021      LLC-load-misses                                             
+              4736      LLC-store-misses                                            
+
+       0.643533318 seconds time elapsed
+
+       0.643547000 seconds user
        0.000000000 seconds sys
