@@ -59,7 +59,7 @@ int CheckForOneSameSum()
 {
   int c = 0;
 
-  int val = heap[1].value;
+  long val = heap[1].value;
 
   if (2 < heapSize)
   {
@@ -229,7 +229,7 @@ int main(int argc, char **argv)
 
     // Insert new node if i < j
     min.k++;
-    long cubeSum = min.k * min.k * min.k + min.l * min.l * min.l;
+    long cubeSum = (long)min.k * min.k * min.k + (long)min.l * min.l * min.l;
     if (min.k < min.l && cubeSum <= n)
     {
       min.value = cubeSum;

@@ -3,7 +3,7 @@ MEMORY = 102400
 N = 10000000000000
 RAMA = ramasort
 CC = gcc
-CFLAGS = -O -Wall
+CFLAGS = -O3 -Wall
 
 SOURCES = ramasort.c ramanujan.c Makefile
 

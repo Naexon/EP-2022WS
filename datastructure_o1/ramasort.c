@@ -59,10 +59,12 @@ int Insert(struct entry element)
   heap[heapSize] = element; /*Insert in the last place*/
   /*Adjust its position*/
   int now = heapSize;
-  while (heap[now / 2].value > element.value)
+  int now_half = now >> 1;
+  while (heap[now_half].value > element.value)
   {
-    heap[now] = heap[now / 2];
-    now /= 2;
+    heap[now] = heap[now_half];
+    now = now_half;
+    now_half = now_half >> 1;
   }
   heap[now] = element;
   return now;
@@ -190,16 +192,16 @@ int main(int argc, char **argv)
   }
   printf("hSize %ld\n", maxNumbers);
 
-int cc = 0;
+  int cc = 0;
   while (heapSize > 0)
   {
-cc++;
-    //printf("size %ld\n", heapSize);
-    //printHeap();
+    cc++;
+    // printf("size %ld\n", heapSize);
+    // printHeap();
     if (CheckForOneSameSum(1))
     {
       count++;
-      //printf("found:       k %ld, l %ld, value %ld, size %ld\n", heap[1].k, heap[1].l, heap[1].value, heapSize);
+      // printf("found:       k %ld, l %ld, value %ld, size %ld\n", heap[1].k, heap[1].l, heap[1].value, heapSize);
       checksum += heap[1].value;
     }
 

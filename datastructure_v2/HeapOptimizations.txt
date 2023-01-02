@@ -128,3 +128,6 @@ heap baseline:
 
        0.643547000 seconds user
        0.000000000 seconds sys
+
+11. replace all ints with longs
+    worse performance

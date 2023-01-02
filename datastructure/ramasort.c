@@ -104,7 +104,7 @@ int CheckForOneSameSum(int i)
     if (heap[7].value == val)
       c++;
   }
-
+  
   if (c == 1)
   {
     return 1;
