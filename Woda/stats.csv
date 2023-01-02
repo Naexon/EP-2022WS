@@ -1,0 +1,26 @@
+./Woda/ramasort: Segmentation fault
+1167590,,cycles,282882,100.00,,
+959678,,instructions,282882,100.00,0.82,insn per cycle
+8411,,branch-misses,282882,100.00,,
+1310,,LLC-load-misses,282882,100.00,,
+264,,LLC-store-misses,282882,100.00,,
+646839,ns,duration_time,646839,100.00,,
+./Woda/ramasort: Segmentation fault
+1110164,,cycles,251516,100.00,,
+965373,,instructions,251516,100.00,0.87,insn per cycle
+8242,,branch-misses,251516,100.00,,
+1158,,LLC-load-misses,251516,100.00,,
+216,,LLC-store-misses,251516,100.00,,
+561240,ns,duration_time,561240,100.00,,
+4649291080,,cycles,1000485594,100.00,,
+8220379169,,instructions,1000485594,100.00,1.77,insn per cycle
+24032177,,branch-misses,1000485594,100.00,,
+1770790,,LLC-load-misses,1000485594,100.00,,
+5499389,,LLC-store-misses,1000485594,100.00,,
+1000819284,ns,duration_time,1000819284,100.00,,
+4666904240,,cycles,1004322175,100.00,,
+8217978401,,instructions,1004322175,100.00,1.76,insn per cycle
+24046810,,branch-misses,1004322175,100.00,,
+1728007,,LLC-load-misses,1004322175,100.00,,
+5474791,,LLC-store-misses,1004322175,100.00,,
+1004667503,ns,duration_time,1004667503,100.00,,
