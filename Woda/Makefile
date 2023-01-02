@@ -1,5 +1,5 @@
-MEMORY = 102400 # Memory in KB, original: 102400
-N = 10000000000000 # original: 10000000000000
+MEMORY = 10002400 # Memory in KB, original: 102400
+N = 100000000000 # original: 10000000000000
 RAMA = ramasort
 CC = gcc
 CFLAGS = -O -Wall
@@ -13,7 +13,7 @@ bench: $(RAMA)
 	ulimit -S -v $(MEMORY); perf stat -e cycles -e instructions -e branch-misses -e LLC-load-misses -e LLC-store-misses ./$(RAMA) $(N)
 
 benchCSV: $(RAMA)
-	ulimit -S -v $(MEMORY); perf stat -x "," -e cycles -e instructions -e branch-misses -e LLC-load-misses -e LLC-store-misses ./$(RAMA) $(N)
+	ulimit -S -v $(MEMORY); perf stat -x , -e cycles -e instructions -e branch-misses -e LLC-load-misses -e LLC-store-misses -e duration_time ./$(RAMA) $(N)
 
 clean:
 	rm ramasort ramanujan
