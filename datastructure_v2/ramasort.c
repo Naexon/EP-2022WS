@@ -243,7 +243,7 @@ int main(int argc, char **argv)
 
   printf("iterations %d, run time %f\n", iterations, (iterations / cbrt(n * n)));
   printf("%ld Ramanujan numbers up to %ld, checksum=%ld\noccupation=%ld, size=%ld\n", count, n, checksum, m, 0);
-  printf("Memory usage: >=%ld\n", maxNumbers * sizeof(struct entry));
+  printf("Memory usage: >= %ld\n", maxNumbers * sizeof(struct entry));
 
   return 0;
 
