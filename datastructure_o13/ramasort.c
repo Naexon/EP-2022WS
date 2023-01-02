@@ -6,6 +6,8 @@
    This program counts the Ramanujan numbers up to a given
 */
 
+// based on o12 -> custom cbrt function for long 
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
