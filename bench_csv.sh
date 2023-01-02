@@ -24,24 +24,34 @@ do
     esac
 done
 
+printf "\n######## Starting benchmark of ./$program_dir/$rama with memory limit of $mem_limit KB ########\n\n"
+
+# commands
+comp_command="cd $program_dir; make $rama; cd .."
+outdir_command="mkdir $program_dir/bench"
+perf_command="ulimit -S -v $mem_limit; perf stat -x , -e cycles -e instructions -e branch-misses -e LLC-load-misses -e LLC-store-misses -e duration_time ./$program_dir/$rama $n"
+
+# check bench folder
+if [ ! -d "./$program_dir/bench" ];
+then
+    echo -n "Creating output folder at ./$program_dir/bench ..."
+    eval "$outdir_command"
+    echo "done"
+    echo ""
+fi
+
 # check file
 if [ ! -f "./$program_dir/$rama" ];
 then
-    echo "Target not found! Please make sure that the program directory contains the $rama executable." >&2
-    exit 1
+    echo -n "Target program not found! Now compiling ... "
+    eval "$comp_command" 1> /dev/null 2> $program_dir/bench/compilation.out
+    echo "done"
+    echo ""
 fi
-
-# define perf command
-perf_command="ulimit -S -v $mem_limit; perf stat -x , -e cycles -e instructions -e branch-misses -e LLC-load-misses -e LLC-store-misses -e duration_time ./$program_dir/$rama $n"
-
-printf "\nStarting benchmark of ./$program_dir/$rama with memory limit of $mem_limit KB:\n\n"
-
-# setup bench dir
-mkdir $program_dir/bench
 
 # first iteration
 echo -n "Running iteration 0 ... "
-eval "$perf_command 1> $program_dir/bench/output 2> $program_dir/bench/stats.csv"
+eval "$perf_command 1> $program_dir/bench/execution.out 2> $program_dir/bench/stats.csv"
 echo "done"
 
 # loop iterations
@@ -54,6 +64,6 @@ done
 
 # output of first iteration
 printf "\nProgram output of first iteration: \n\n"
-cat $program_dir/bench/output
+cat $program_dir/bench/execution.out
 
-printf "\nProgram output and stats can be found in the ./$program_dir/bench/ directory.\n\n"
+printf "\nProgram compilation output, execution output and stats can be found in the ./$program_dir/bench/ directory.\n\n"
