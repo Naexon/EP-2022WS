@@ -44,14 +44,14 @@ fi
 if [ ! -f "./$program_dir/$rama" ];
 then
     echo -n "Target program not found! Now compiling ... "
-    eval "$comp_command" 1> /dev/null 2> $program_dir/bench/compilation.out
+    eval "$comp_command" 1> /dev/null 2> $program_dir/bench/compilation_output.txt
     echo "done"
     echo ""
 fi
 
 # first iteration
 echo -n "Running iteration 0 ... "
-eval "$perf_command 1> $program_dir/bench/execution.out 2> $program_dir/bench/stats.csv"
+eval "$perf_command 1> $program_dir/bench/execution_output.txt 2> $program_dir/bench/stats.csv"
 echo "done"
 
 # loop iterations
@@ -64,6 +64,6 @@ done
 
 # output of first iteration
 printf "\nProgram output of first iteration: \n\n"
-cat $program_dir/bench/execution.out
+cat $program_dir/bench/execution_output.txt
 
 printf "\nProgram compilation output, execution output and stats can be found in the ./$program_dir/bench/ directory.\n\n"

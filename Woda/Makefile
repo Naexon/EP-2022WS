@@ -1,5 +1,5 @@
 MEMORY = 10002400 # Memory in KB, original: 102400
-N = 100000000000 # original: 10000000000000
+N = 10000000000000 # original: 10000000000000
 RAMA = ramasort
 CC = gcc
 CFLAGS = -O -Wall
@@ -23,6 +23,9 @@ ramanujan: ramanujan.c
 
 ramasort: ramasort.c
 	$(CC) $(DFLAGS) ramasort.c -lm -o ramasort
+
+test: test.c
+	$(CC) -O3 -Wall test.c -lm -o test
 
 dist: ../ramanujan.tar.gz
 
