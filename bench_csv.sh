@@ -40,14 +40,10 @@ then
     echo ""
 fi
 
-# check file
-if [ ! -f "./$program_dir/$rama" ];
-then
-    echo -n "Target program not found! Now compiling ... "
-    eval "$comp_command" 1> /dev/null 2> $program_dir/bench/compilation_output.txt
-    echo "done"
-    echo ""
-fi
+echo -n "Now compiling program executable ./$program_dir/$rama ... "
+eval "$comp_command" 1> /dev/null 2> $program_dir/bench/compilation_output.txt
+echo "done"
+echo ""
 
 # first iteration
 echo -n "Running iteration 0 ... "
