@@ -72,7 +72,7 @@ int CheckForOneSameSum(int i)
 {
   int c = 0;
 
-  int val = heap[1].value;
+  long val = heap[1].value;
 
   if (2 < heapSize)
   {
