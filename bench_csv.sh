@@ -54,6 +54,6 @@ done
 
 # output of first iteration
 printf "\nProgram output of first iteration: \n\n"
-cat $program_dir/output
+cat $program_dir/bench/output
 
 printf "\nProgram output and stats can be found in the ./$program_dir/bench/ directory.\n\n"
