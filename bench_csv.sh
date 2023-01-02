@@ -48,7 +48,7 @@ echo "done"
 for (( i=1; i<$(($repeats)); i++))
     do
         echo -n "Running iteration $i ... "
-        eval "$perf_command 1> /dev/null 2>> $program_dir/stats.csv"
+        eval "$perf_command 1> /dev/null 2>> $program_dir/bench/stats.csv"
         echo "done"
 done
 
