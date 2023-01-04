@@ -1,3 +1,4 @@
+occurrences,unit,event,run_id,percent,additional_stat,additional_stat_description
 48231113664,,cycles,10282310619,100.00,,
 73894719976,,instructions,10282310619,100.00,1.53,insn per cycle
 1149063610,,branch-misses,10282310619,100.00,,
