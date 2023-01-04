@@ -45,9 +45,13 @@ eval "$comp_command" 1> /dev/null 2> $program_dir/bench/compilation_output.txt
 echo "done"
 echo ""
 
+# column names
+# I was not able to find proper documentation about the 'perf stat -x' CSV output so these are just guesses!!!
+echo "occurrences,unit,event,run_id,percent,additional_stat,additional_stat_description" 2> $program_dir/bench/stats.csv
+
 # first iteration
 echo -n "Running iteration 0 ... "
-eval "$perf_command 1> $program_dir/bench/execution_output.txt 2> $program_dir/bench/stats.csv"
+eval "$perf_command 1> $program_dir/bench/execution_output.txt 2>> $program_dir/bench/stats.csv"
 echo "done"
 
 # loop iterations
