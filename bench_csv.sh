@@ -47,7 +47,7 @@ echo ""
 
 # column names
 # I was not able to find proper documentation about the 'perf stat -x' CSV output so these are just guesses!!!
-echo "occurrences,unit,event,run_id,percent,additional_stat,additional_stat_description" 2> $program_dir/bench/stats.csv
+echo "occurrences,unit,event,run_id,percent,additional_stat,additional_stat_description" > $program_dir/bench/stats.csv
 
 # first iteration
 echo -n "Running iteration 0 ... "
