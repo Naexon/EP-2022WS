@@ -6,7 +6,7 @@
    This program counts the Ramanujan numbers up to a given
 */
 
-// based on o14 -> don't know what i did here but lets commit it to be save
+// based on o14 -> gcc -O3 flag
 
 #include <stdio.h>
 #include <stdlib.h>
