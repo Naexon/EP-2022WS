@@ -1,0 +1,34 @@
+ramasort.c: In function ‘printHeap’:
+ramasort.c:216:17: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘int’ [-Wformat=]
+  216 |     printf("k %ld, l %ld, value %ld\n", heap[i].k, heap[i].l, heap[i].value);
+      |               ~~^                       ~~~~~~~~~
+      |                 |                              |
+      |                 long int                       int
+      |               %d
+ramasort.c:216:24: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 3 has type ‘int’ [-Wformat=]
+  216 |     printf("k %ld, l %ld, value %ld\n", heap[i].k, heap[i].l, heap[i].value);
+      |                      ~~^                           ~~~~~~~~~
+      |                        |                                  |
+      |                        long int                           int
+      |                      %d
+ramasort.c: In function ‘main’:
+ramasort.c:247:19: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘int’ [-Wformat=]
+  247 |   printf("hSize %ld\n", maxNumbers);
+      |                 ~~^     ~~~~~~~~~~
+      |                   |     |
+      |                   |     int
+      |                   long int
+      |                 %d
+ramasort.c:289:81: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 6 has type ‘int’ [-Wformat=]
+  289 |   printf("%ld Ramanujan numbers up to %ld, checksum=%ld\noccupation=%ld, size=%ld\n", count, n, checksum, m, 0);
+      |                                                                               ~~^                            ~
+      |                                                                                 |                            |
+      |                                                                                 long int                     int
+      |                                                                               %d
+ramasort.c:291:16: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘int’ [-Wformat=]
+  291 |   printf("cc %ld\n", cc);
+      |              ~~^     ~~
+      |                |     |
+      |                |     int
+      |                long int
+      |              %d

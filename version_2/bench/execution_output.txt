@@ -1,0 +1,5 @@
+hSize 21544
+114359 Ramanujan numbers up to 10000000000000, checksum=355033384379411459
+occupation=0, size=0
+Memory usage: >=344704
+cc 205002588

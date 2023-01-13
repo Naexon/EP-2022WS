@@ -1,0 +1,21 @@
+ramasort.c: In function ‘main’:
+ramasort.c:266:19: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘int’ [-Wformat=]
+  266 |   printf("hSize %ld\n", maxNumbers);
+      |                 ~~^     ~~~~~~~~~~
+      |                   |     |
+      |                   |     int
+      |                   long int
+      |                 %d
+ramasort.c:292:81: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 6 has type ‘int’ [-Wformat=]
+  292 |   printf("%ld Ramanujan numbers up to %ld, checksum=%ld\noccupation=%ld, size=%ld\n", count, n, checksum, m, 0);
+      |                                                                               ~~^                            ~
+      |                                                                                 |                            |
+      |                                                                                 long int                     int
+      |                                                                               %d
+ramasort.c:294:16: warning: format ‘%ld’ expects argument of type ‘long int’, but argument 2 has type ‘int’ [-Wformat=]
+  294 |   printf("cc %ld\n", cc);
+      |              ~~^     ~~
+      |                |     |
+      |                |     int
+      |                long int
+      |              %d
