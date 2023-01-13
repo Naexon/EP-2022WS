@@ -1,6 +1,0 @@
-419659478,,cycles,92888576,100.00,,
-713748501,,instructions,92888576,100.00,1.70,insn per cycle
-8700700,,branch-misses,92888576,100.00,,
-2485,,LLC-load-misses,92888576,100.00,,
-1864,,LLC-store-misses,92888576,100.00,,
-94033594,ns,duration_time,94033594,100.00,,
