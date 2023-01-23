@@ -1,0 +1,3 @@
+114359 Ramanujan numbers up to 10000000000000, checksum=355033384379411459
+occupation=205002588, size=232079541
+Memory usage: >=3713272656
